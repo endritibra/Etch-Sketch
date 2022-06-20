@@ -1,4 +1,6 @@
 const container=document.querySelector('.container');
+const draw=document.querySelector("#draw");
+
 
 for(let i=0;i<=255;i++){
     let piece = document.createElement('div');
@@ -24,10 +26,6 @@ const piece = document.querySelectorAll(".colori");
 
 
 
-container.addEventListener("click",(e)=>{
-    target=e.target;
-    target.style.backgroundColor=backRGB;
-});
 
 const reset = document.querySelector("#reset");
 reset.addEventListener("click",function(){
@@ -39,7 +37,7 @@ reset.addEventListener("click",function(){
 const clear1=document.querySelector("#clear")
 
 if(clear1.addEventListener('click',function(e){
-    container.addEventListener("mouseover",(e)=>{
+    container.addEventListener("click",(e)=>{
         target=e.target;
         target.style.backgroundColor='whitesmoke';
     })
@@ -48,5 +46,10 @@ if(clear1.addEventListener('click',function(e){
 
 
 
+if(draw.addEventListener("click",function(e){
+    container.addEventListener("click",(e)=>{
+    target=e.target;
+    target.style.backgroundColor=backRGB;})
+}));
 
 
